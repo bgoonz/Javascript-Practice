@@ -34,14 +34,12 @@ function calculateResult(calculationType) {
     calculationType !== "ADD" &&
     calculationType !== "SUBTRACT" &&
     calculationType !== "MULTIPLY" &&
-    calculationType !== "DIVIDE"
+      calculationType !== "DIVIDE" ||
+    !enteredNumber
   ) {
     return;
   }
-    
-    
-    
-    
+
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
   let mathOperator;
