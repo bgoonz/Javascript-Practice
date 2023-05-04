@@ -43,3 +43,7 @@
 - **Global Scope** refers to variables that are accessible to every part of the program.
 - **Block Scope** refers to variables that are accessible only within the block they are defined.
 - **Local Scope** refers to variables that are declared within a function.
+
+**Shadowing** _when a variable is declared in a local scope that has the same name as a variable in the global scope_
+
+- when a variable is shadowed, the local variable takes precedence over the global variable
