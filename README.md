@@ -77,3 +77,5 @@ if (isLoggedIn !== true) {
   // This would execute because isLoggedIn is true and hence !== true yields false
 }
 ```
+
+**Beware of comparing objects and arrays** _objects and arrays are reference types and are not compared by value but by reference_
