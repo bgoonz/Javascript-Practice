@@ -28,3 +28,18 @@
 ---
 
 - JavaScript code is generally executed from top to bottom, line by line, in the order that the code is written.
+
+---
+
+### Functions in JavaScript
+
+- Functions are a way to package functionality that you wish to reuse.
+- functions are hoisted to the top of the file
+
+### Scope
+
+- Scope is the context in which our variables are declared. We think about scope in relation to blocks because variables can exist either outside of or within these blocks.
+- a block is a chunk of code bounded by `{}`
+- **Global Scope** refers to variables that are accessible to every part of the program.
+- **Block Scope** refers to variables that are accessible only within the block they are defined.
+- **Local Scope** refers to variables that are declared within a function.
