@@ -47,3 +47,33 @@
 **Shadowing** _when a variable is declared in a local scope that has the same name as a variable in the global scope_
 
 - when a variable is shadowed, the local variable takes precedence over the global variable
+
+---
+
+#### If Statements
+
+- if statements are used to make decisions in code
+- if statements are truthy or falsy
+- if statements can be chained together using else if
+
+```js
+const isLoggedIn = true;
+if (isLoggedIn) {
+  // This code will execute because isLoggedIn is true => A valid condition
+}
+
+//----------------------------------
+const isLoggedIn = true;
+if (!isLoggedIn) {
+  // This code will NOT execute because isLoggedIn is true but ! inverts it (in this check)
+} else {
+  // This would execute because !isLoggedIn yields false => else block executes
+}
+
+const isLoggedIn = true;
+if (isLoggedIn !== true) {
+  // This would NOT execute
+} else {
+  // This would execute because isLoggedIn is true and hence !== true yields false
+}
+```
