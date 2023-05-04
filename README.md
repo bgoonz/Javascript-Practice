@@ -154,25 +154,21 @@ if (isLoggedIn !== true) {
 |            | Spread (...)                       |                                 | ... …                |
 | 1          | Comma / Sequence                   | left-to-right                   | … , …                |
 
-
-
 ---
-
 
 ### Truthy and Falsy
 
 ```js
 const name = "John";
 
-if(name==="John"){
-    console.log("Hello John");
+if (name === "John") {
+  console.log("Hello John");
 }
 //will print Hello John because the condition is true
 
-if(name){
-    // will exicute because the name exists and is thus truthy.
+if (name) {
+  // will exicute because the name exists and is thus truthy.
 }
-
 ```
 
 - all numbers except for 0 are truthy
@@ -182,4 +178,47 @@ if(name){
 - the value undefined is falsy
 - the value null is falsy
 - the value NaN is falsy
- 
+
+---
+
+#### Coercion vs Conversion
+
+It's important to understand that JavaScript is able to use variables in conditions - even without comparison operators.
+
+This is kind of obvious, if we consider a boolean variable, for example:
+
+1.  let isLoggedIn = true;
+2.  if (isLoggedIn) {
+3.  ...
+4.  }
+
+Since if just wants a condition that returns true or false, it makes sense that you can just provide a boolean variable or value and it works - without the extra comparison (`if (isLoggedIn === true)` - that would also work but is redundant).
+
+Whilst the above example makes sense, it can be confusing when you encounter code like this for the first time:
+
+1.  let userInput = 'Max';
+2.  if (userInput) {
+3.  ... // this code here will execute because 'Max' is "truthy" (all strings but empty strings are)
+4.  }
+
+JavaScript tries to coerce ("convert without really converting") the values you pass to if (or other places where conditions are required) to boolean values. That means that it tries to interpret `'Max'` as a boolean - and there it follows the rules outlined in the previous lecture (e.g. `0` is treated as `false`, all other numbers are treated as `true` etc.)
+
+It's important to understand that JavaScript doesn't really convert the value though.
+
+`userInput` still holds `'Max'` after being used in a condition like shown above - it's not converted to a boolean. That would be horrible because you'd invisibly lose the values stored in your variables.
+
+Instead,
+
+1.  if (userInput) { ... }
+
+is basically transformed (behind the scenes) to
+
+1.  if (userInput === true) {
+
+And here, the `=== operator` generates and returns a boolean. It also doesn't touch the variable you're comparing - `userInput` stays a string. But it generates a new boolean which is temporarily used in the comparison.
+
+And that's exactly what JavaScript automatically does when it finds something like this:
+
+1.  if (userInput) { ... }
+
+---
