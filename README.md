@@ -79,3 +79,79 @@ if (isLoggedIn !== true) {
 ```
 
 **Beware of comparing objects and arrays** _objects and arrays are reference types and are not compared by value but by reference_
+
+
+
+---
+
+### Operator Precedence
+
+| Precedence | Operator type                      | Associativity                   | Individual operators |
+|------------|------------------------------------|---------------------------------|----------------------|
+| 18         | Grouping                           | n/a                             | ( … )                |
+| 17         | Member Access                      | left-to-right                   | … . …                |
+|            | Optional chaining                  |                                 | … ?. …               |
+|            | Computed Member Access             | n/a                             | … [ … ]              |
+|            | new (with argument list)           |                                 | new … ( … )          |
+|            | Function Call                      |                                 | … ( … )              |
+| 16         | new (without argument list)        | n/a                             | new …                |
+| 15         | Postfix Increment                  | n/a                             | … ++                 |
+|            | Postfix Decrement                  |                                 | … --                 |
+| 14         | Logical NOT (!)                    | n/a                             | ! …                  |
+|            | Bitwise NOT (~)                    |                                 | ~ …                  |
+|            | Unary plus (+)                     |                                 | + …                  |
+|            | Unary negation (-)                 |                                 | - …                  |
+|            | Prefix Increment                   |                                 | ++ …                 |
+|            | Prefix Decrement                   |                                 | -- …                 |
+|            | typeof                             |                                 | typeof …             |
+|            | void                               |                                 | void …               |
+|            | delete                             |                                 | delete …             |
+|            | await                              |                                 | await …              |
+| 13         | Exponentiation (**)                | right-to-left                   | … ** …               |
+| 12         | Multiplication (*)                 | left-to-right                   | … * …                |
+|            | Division (/)                       |                                 | … / …                |
+|            | Remainder (%)                      |                                 | … % …                |
+| 11         | Addition (+)                       | left-to-right                   | … + …                |
+|            | Subtraction (-)                    |                                 | … - …                |
+| 10         | Bitwise Left Shift (<<)            | left-to-right                   | … << …               |
+|            | Bitwise Right Shift (>>)           |                                 | … >> …               |
+|            | Bitwise Unsigned Right Shift (>>>) |                                 | … >>> …              |
+| 9          | Less Than (<)                      | left-to-right                   | … < …                |
+|            | Less Than Or Equal (<=)            |                                 | … <= …               |
+|            | Greater Than (>)                   |                                 | … > …                |
+|            | Greater Than Or Equal (>=)         |                                 | … >= …               |
+|            | in                                 |                                 | … in …               |
+|            | instanceof                         |                                 | … instanceof …       |
+| 8          | Equality (==)                      | left-to-right                   | … == …               |
+|            | Inequality (!=)                    |                                 | … != …               |
+|            | Strict Equality (===)              |                                 | … === …              |
+|            | Strict Inequality (!==)            |                                 | … !== …              |
+| 7          | Bitwise AND (&)                    | left-to-right                   | … & …                |
+| 6          | Bitwise XOR (^)                    | left-to-right                   | … ^ …                |
+| 5          | Bitwise OR (|)                     | left-to-right                   | … | …                |
+| 4          | Logical AND (&&)                   | left-to-right                   | … && …               |
+| 3          | Logical OR (||)                    | left-to-right                   | … || …               |
+|            | Nullish coalescing operator (??)   |                                 | … ?? …               |
+| 2          | Assignment                         | right-to-left                   | … = …                |
+|            |                                    |                                 | … += …               |
+|            |                                    |                                 | … -= …               |
+|            |                                    |                                 | … **= …              |
+|            |                                    |                                 | … *= …               |
+|            |                                    |                                 | … /= …               |
+|            |                                    |                                 | … %= …               |
+|            |                                    |                                 | … <<= …              |
+|            |                                    |                                 | … >>= …              |
+|            |                                    |                                 | … >>>= …             |
+|            |                                    |                                 | … &= …               |
+|            |                                    |                                 | … ^= …               |
+|            |                                    |                                 | … |= …               |
+|            |                                    |                                 | … &&= …              |
+|            |                                    |                                 | … ||= …              |
+|            |                                    |                                 | … ??= …              |
+|            | Conditional (ternary) operator     | right-to-left                   | … ? … : …            |
+|            |                                    | (Groups on expressions after ?) |                      |
+|            | Arrow (=>)                         | right-to-left                   | … => …               |
+|            | yield                              | n/a                             | yield …              |
+|            | yield*                             |                                 | yield* …             |
+|            | Spread (...)                       |                                 | ... …                |
+| 1          | Comma / Sequence                   | left-to-right                   | … , …                |
